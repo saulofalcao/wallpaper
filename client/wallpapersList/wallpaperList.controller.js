@@ -1,5 +1,5 @@
 Template.content.helpers({
-    wallpapers: function () {
+    wallpapersList: function () {
         all = Wallpapers.find({}).fetch();
         chunks = [];
         size = 3;
