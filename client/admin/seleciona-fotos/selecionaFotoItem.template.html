@@ -1,6 +1,8 @@
 <template name="selecionaFotoItem">
   
     <div class="col-md-4 portfolio-item">
+        <!--selecao:{{estaSelecionada}}-->
+        <input type="checkbox" class="estaSelecionada" name="estaSelecionada" {{estaSelecionada}}/>
         <a target="_blank" href="{{urlOriginal}}">
             <img class="img-responsive" src="{{urlSize320}}" alt="">
         </a>
@@ -8,5 +10,6 @@
                             <a href="#">Project Name</a>
                         </h3>-->
         <p>{{descricao}}</p>
+        <!--<p>{{estaSelecionada}}</p>-->
     </div>
 </template>
