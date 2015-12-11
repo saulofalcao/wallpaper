@@ -32,6 +32,12 @@ Template.selecionaFotoItem.events({
 
 //        console.log('findOne Wallpaper:');
 //        console.log(retorno);
-
+    },
+    "change .descricaoFoto": function(e) {
+        e.preventDefault();
+        console.log(e.target.value);
+        console.log(this);
+        FotosFlickr.update(this._id, {$set: {descricao: e.target.value}});
     }
+    
 });
