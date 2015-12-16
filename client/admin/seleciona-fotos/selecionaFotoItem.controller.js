@@ -35,8 +35,16 @@ Template.selecionaFotoItem.events({
     },
     "change .descricaoFoto": function(e) {
         e.preventDefault();
+        console.log('target.value:');
         console.log(e.target.value);
+        
+        console.log('this:');
         console.log(this);
+        
+        var wallpaper = Wallpapers.findOne({flickrId: this.flickrId});
+        
+        Wallpapers.update(wallpaper._id,{$set: {descricao: e.target.value}});
+        
         FotosFlickr.update(this._id, {$set: {descricao: e.target.value}});
     }
     
