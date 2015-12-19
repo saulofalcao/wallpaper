@@ -23,8 +23,7 @@ Template.selecionaFotoItem.events({
                 Wallpapers.remove(wallpaper._id);
             }
 
-        }
-        else {
+        } else {
             Wallpapers.insert({flickrId: this.flickrId, descricao: this.descricao,
                 url_thumbnail: this.urlSize320, url_original: this.urlOriginal});
 
@@ -33,19 +32,20 @@ Template.selecionaFotoItem.events({
 //        console.log('findOne Wallpaper:');
 //        console.log(retorno);
     },
-    "change .descricaoFoto": function(e) {
+    "change .descricaoFoto": function (e) {
         e.preventDefault();
-        console.log('target.value:');
         console.log(e.target.value);
-        
-        console.log('this:');
         console.log(this);
-        
-        var wallpaper = Wallpapers.findOne({flickrId: this.flickrId});
-        
-        Wallpapers.update(wallpaper._id,{$set: {descricao: e.target.value}});
-        
+
         FotosFlickr.update(this._id, {$set: {descricao: e.target.value}});
+
+        var wallpaper = Wallpapers.findOne({flickrId: this.flickrId});
+
+        // se existe é porque já foi salvo, então alterar descrição nele também
+        if (typeof wallpaper != 'undefined') {
+            Wallpapers.update(wallpaper._id, {$set: {descricao: e.target.value}});
+        }
+
     }
-    
+
 });

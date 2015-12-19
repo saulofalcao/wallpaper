@@ -46,6 +46,7 @@ lai:collection-extensions@0.1.4
 launch-screen@1.0.4
 livedata@1.0.15
 logging@1.0.8
+manuelschoebel:ms-seo@0.4.1
 meteor@1.1.10
 meteor-base@1.0.1
 meteor-platform@1.2.3
@@ -70,6 +71,7 @@ routepolicy@1.0.6
 session@1.1.1
 spacebars@1.0.7
 spacebars-compiler@1.0.7
+spiderable@1.0.9
 standard-minifiers@1.0.2
 templating@1.1.5
 templating-tools@1.0.0
