@@ -1,7 +1,17 @@
 <template name="selecionaFotos">
     <div class="container">
+        <!--<label class="filtro-seleciona-fotos">-->
+        <!--<input type="select" checked="{{hideCompleted}}" />-->
+        <!--Hide Completed Tasks-->
+        <!--</label>-->
 
-         {{> pages}}
+        <select name="filtro-seleciona-fotos" class="filtro-seleciona-fotos">
+            <option value="">Escolha uma opção</option>
+            <option value="selecionadas">Selecionadas</option>
+            <option value="nao-selecionadas">Não Selecionadas</option>
+
+        </select>
+        {{> pages}}
     </div>
     {{> pagesNav}}
 
